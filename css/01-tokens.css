@@ -1,0 +1,38 @@
+:root {
+  /* Claude base conservada como núcleo, reinterpretada a Musicala claro. */
+  --color-bg: #fff8ff;
+  --color-bg-2: #f4efff;
+  --color-surface: #ffffff;
+  --color-surface-2: #f7f1ff;
+  --color-border: #eadff7;
+  --color-primary: #7c3ff2;
+  --color-primary-2: #a46bff;
+  --color-primary-glow: rgba(124, 63, 242, 0.22);
+  --color-accent: #ffbd3d;
+  --color-accent-2: #ff6fae;
+  --color-accent-glow: rgba(255, 189, 61, 0.28);
+  --color-success: #2fbf91;
+  --color-danger: #ef4e7b;
+  --color-text: #24183d;
+  --color-text-muted: #706483;
+  --color-text-soft: #9b8dab;
+  --font-ui: 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --shadow-soft: 0 18px 60px rgba(76, 42, 137, 0.12);
+  --shadow-glow: 0 0 32px var(--color-primary-glow);
+  --shadow-accent: 0 16px 36px var(--color-accent-glow);
+  --transition: 0.2s ease;
+
+  --grad-1: #f76f6f;
+  --grad-2: #f7a24a;
+  --grad-3: #f7c948;
+  --grad-4: #8bc34a;
+  --grad-5: #4fcf8e;
+  --grad-6: #4ab8f7;
+  --grad-7: #7c6af7;
+  --grad-8: #f76f6f;
+}
