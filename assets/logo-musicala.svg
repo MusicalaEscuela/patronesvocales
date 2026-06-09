@@ -1,0 +1,21 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo Musicala">
+  <rect width="512" height="512" rx="128" fill="url(#bg)"/>
+  <circle cx="170" cy="154" r="58" fill="#FFBD3D" opacity="0.95"/>
+  <circle cx="342" cy="154" r="58" fill="#FF6FAE" opacity="0.92"/>
+  <circle cx="256" cy="342" r="70" fill="#4FCF8E" opacity="0.92"/>
+  <path d="M145 332C191 253 230 207 282 183C322 165 370 169 405 190" stroke="white" stroke-width="38" stroke-linecap="round"/>
+  <path d="M145 332C191 253 230 207 282 183C322 165 370 169 405 190" stroke="#7C3FF2" stroke-width="22" stroke-linecap="round"/>
+  <path d="M167 356C207 383 254 389 300 374C342 360 374 329 391 292" stroke="white" stroke-width="38" stroke-linecap="round"/>
+  <path d="M167 356C207 383 254 389 300 374C342 360 374 329 391 292" stroke="#7C3FF2" stroke-width="22" stroke-linecap="round"/>
+  <path d="M248 170V106C248 94.9543 256.954 86 268 86H356" stroke="#24183D" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="232" cy="207" rx="42" ry="32" transform="rotate(-18 232 207)" fill="#24183D"/>
+  <circle cx="184" cy="155" r="15" fill="#24183D" opacity="0.65"/>
+  <circle cx="336" cy="155" r="15" fill="#24183D" opacity="0.65"/>
+  <defs>
+    <linearGradient id="bg" x1="54" y1="26" x2="463" y2="482" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8FF"/>
+      <stop offset="0.5" stop-color="#F1E8FF"/>
+      <stop offset="1" stop-color="#FFE9F3"/>
+    </linearGradient>
+  </defs>
+</svg>
