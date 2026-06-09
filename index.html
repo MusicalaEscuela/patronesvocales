@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ============ FONTS & META ============ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VozPatrones Musicala: entrenamiento de patrones melódicos con grados de la escala musical." />
+  <meta name="theme-color" content="#fff8ff" />
+  <title>VozPatrones · Musicala</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+
+  <!-- ============ CSS VARIABLES ============ -->
+  <link rel="stylesheet" href="./css/01-tokens.css" />
+
+  <!-- ============ RESET & BASE ============ -->
+  <link rel="stylesheet" href="./css/02-reset-base.css" />
+
+  <!-- ============ LAYOUT ============ -->
+  <link rel="stylesheet" href="./css/03-layout.css" />
+
+  <!-- ============ COMPONENTES ============ -->
+  <link rel="stylesheet" href="./css/04-components.css" />
+
+  <!-- ============ ANIMACIONES ============ -->
+  <link rel="stylesheet" href="./css/05-animations.css" />
+</head>
+<body>
+  <!-- ============ HTML STRUCTURE ============ -->
+  <div class="app-shell" data-app>
+    <header class="app-header" aria-labelledby="app-title">
+      <nav class="topbar" aria-label="Navegación principal">
+        <a class="brand-lockup" href="#top" aria-label="VozPatrones Musicala">
+          <span class="brand-lockup__mark" aria-hidden="true">
+            <img src="./assets/logo.png" alt="" />
+          </span>
+          <span class="brand-lockup__copy">
+            <span class="brand-lockup__eyebrow">Musicala presenta</span>
+            <strong>VozPatrones</strong>
+          </span>
+        </a>
+
+        <button class="icon-button config-mobile-toggle" type="button" data-config-toggle aria-expanded="false" aria-controls="config-panel-body">
+          <span aria-hidden="true">⚙</span>
+          <span class="sr-only">Abrir configuración</span>
+        </button>
+      </nav>
+
+      <section class="hero" id="top">
+        <div class="hero__content">
+          <p class="hero__kicker">Entrenamiento vocal por grados de la escala</p>
+          <h1 class="hero__title" id="app-title">Escucha, mira y canta patrones melódicos.</h1>
+          <p class="hero__text">Una herramienta visual para practicar solfeo, afinación y memoria melódica con una biblioteca grande de ejercicios organizados por nivel, categoría y objetivo. La civilización avanza, poquito, pero avanza.</p>
+        </div>
+
+        <aside class="hero-card" aria-label="Resumen de práctica actual">
+          <span class="hero-card__label">Patrón activo</span>
+          <strong class="hero-card__name" data-current-pattern-card>Paso a paso</strong>
+          <span class="hero-card__meta" data-current-pattern-meta>Nivel 1 · 2 notas</span>
+        </aside>
+      </section>
+    </header>
+
+    <main class="app-main">
+      <section class="practice-grid" aria-label="Entrenamiento de voz">
+        <aside class="panel config-panel" aria-labelledby="config-title">
+          <div class="panel__header">
+            <div>
+              <p class="panel__eyebrow">Configuración</p>
+              <h2 class="panel__title" id="config-title">Ajustes de práctica</h2>
+            </div>
+            <span class="panel__badge">Audio Web</span>
+          </div>
+
+          <div class="config-panel__body" id="config-panel-body" data-config-body>
+            <article class="control-group" aria-labelledby="tonic-label">
+              <div class="control-group__header">
+                <h3 id="tonic-label">Tónica</h3>
+                <span data-tonic-helper>Do mayor</span>
+              </div>
+              <div class="pill-group" data-tonic-buttons role="radiogroup" aria-labelledby="tonic-label"></div>
+            </article>
+
+            <article class="control-group" aria-labelledby="bpm-label">
+              <div class="control-group__header">
+                <h3 id="bpm-label">Pulso</h3>
+                <strong><span data-bpm-value>72</span> BPM</strong>
+              </div>
+              <input class="range-slider" data-bpm-slider type="range" min="40" max="120" value="72" step="1" aria-labelledby="bpm-label" />
+              <div class="tempo-scale" aria-hidden="true">
+                <span>Lento</span>
+                <span>Medio</span>
+                <span>Rápido</span>
+              </div>
+            </article>
+
+            <article class="control-group" aria-labelledby="mode-label">
+              <div class="control-group__header">
+                <h3 id="mode-label">Modo</h3>
+                <span data-mode-helper>Escucha guiada</span>
+              </div>
+              <div class="segmented-control" data-mode-buttons role="radiogroup" aria-labelledby="mode-label"></div>
+            </article>
+
+            <article class="control-group" aria-labelledby="range-label">
+              <div class="control-group__header">
+                <h3 id="range-label">Rango vocal</h3>
+                <span data-range-helper>Cómodo</span>
+              </div>
+              <div class="segmented-control segmented-control--small" data-range-buttons role="radiogroup" aria-labelledby="range-label"></div>
+            </article>
+
+            <article class="control-group helper-card" aria-labelledby="audio-label">
+              <div class="helper-card__icon" aria-hidden="true">🎧</div>
+              <div>
+                <h3 id="audio-label">Estado del audio</h3>
+                <p data-audio-status>Toca cualquier botón para activar el audio.</p>
+              </div>
+            </article>
+          </div>
+        </aside>
+
+        <section class="studio" aria-label="Visualizador y controles de reproducción">
+          <article class="panel visualizer-panel">
+            <div class="visualizer-panel__header">
+              <div>
+                <p class="panel__eyebrow">Visualizador</p>
+                <h2 class="pattern-title" data-pattern-title>Patrón 12</h2>
+              </div>
+              <span class="level-chip" data-level-chip>Nivel 1</span>
+            </div>
+
+            <div class="exercise-meta" aria-label="Detalle del ejercicio activo">
+              <span class="exercise-meta__category" data-exercise-category>🌱 Calentamiento</span>
+              <p><strong>Objetivo:</strong> <span data-exercise-objective>Reconocer el movimiento melódico.</span></p>
+              <p><strong>Tip:</strong> <span data-exercise-recommendation>Cantar suave y escuchar antes de repetir.</span></p>
+              <small data-exercise-description>Secuencia: 1 · 2</small>
+            </div>
+
+            <div class="note-stage" aria-live="polite">
+              <div class="pattern-strip" data-pattern-strip></div>
+            </div>
+
+            <div class="progress-dots" data-progress-dots aria-label="Progreso del patrón"></div>
+          </article>
+
+          <article class="transport-card" aria-label="Controles de reproducción">
+            <button class="play-button" type="button" data-play-button>
+              <span class="play-button__icon" aria-hidden="true">▶</span>
+              <span data-play-label>Reproducir</span>
+            </button>
+
+            <div class="transport-actions" aria-label="Acciones rápidas de ejercicios">
+              <button class="ghost-button" type="button" data-next-pattern>Siguiente ejercicio</button>
+              <button class="ghost-button" type="button" data-random-pattern>Sorpresa 🎲</button>
+            </div>
+
+            <div class="transport-meta">
+              <span data-loop-indicator>Repetición 0/4</span>
+              <span data-note-duration>Duración: 833 ms</span>
+            </div>
+          </article>
+
+          <article class="panel guide-panel" aria-labelledby="guide-title">
+            <div class="panel__header panel__header--compact">
+              <div>
+                <p class="panel__eyebrow">Guía rápida</p>
+                <h2 class="panel__title" id="guide-title">Cómo practicar</h2>
+              </div>
+            </div>
+            <ol class="practice-steps">
+              <li><strong>Escucha:</strong> deja que la app toque el patrón.</li>
+              <li><strong>Repite:</strong> canta los grados o las notas que aparecen.</li>
+              <li><strong>Loop:</strong> activa repetición para fijar memoria melódica.</li>
+              <li><strong>Eco:</strong> escucha primero y luego repite con guía visual.</li>
+            </ol>
+          </article>
+        </section>
+      </section>
+
+
+
+<section class="panel exhaustive-panel" aria-labelledby="exhaustive-title">
+  <div class="panel__header">
+    <div>
+      <p class="panel__eyebrow">Laboratorio exhaustivo</p>
+      <h2 class="panel__title" id="exhaustive-title">Todos los códigos posibles hasta 8 números</h2>
+    </div>
+    <span class="panel__badge" data-exhaustive-total>19.173.960 patrones</span>
+  </div>
+
+  <p class="lab-description">
+    Genera patrones con grados del 1 al 8 sin guardar millones de tarjetas en memoria. Sí, todos existen; solo no los ponemos todos a gritar al mismo tiempo porque el navegador también merece vivir.
+  </p>
+
+  <div class="exhaustive-tools" aria-label="Controles del laboratorio exhaustivo">
+    <label class="library-field">
+      <span>Longitud</span>
+      <select data-exhaustive-length></select>
+    </label>
+
+    <label class="library-field">
+      <span>Modo</span>
+      <select data-exhaustive-mode>
+        <option value="con-repeticion">Con repetición</option>
+        <option value="sin-repetir">Sin repetir</option>
+      </select>
+    </label>
+
+    <label class="library-field">
+      <span>Página</span>
+      <input type="number" data-exhaustive-page min="1" value="1" inputmode="numeric" />
+    </label>
+
+    <label class="library-field">
+      <span>Código directo</span>
+      <input type="search" data-exhaustive-code placeholder="Ej: 1358" inputmode="numeric" maxlength="8" />
+    </label>
+  </div>
+
+  <div class="exhaustive-actions" aria-label="Acciones del laboratorio exhaustivo">
+    <button class="ghost-button" type="button" data-exhaustive-prev>← Página anterior</button>
+    <button class="ghost-button" type="button" data-exhaustive-go>Ir a página</button>
+    <button class="ghost-button" type="button" data-exhaustive-next>Página siguiente →</button>
+    <button class="ghost-button" type="button" data-exhaustive-random>Patrón sorpresa 🎲</button>
+    <button class="ghost-button ghost-button--primary" type="button" data-exhaustive-load-code>Cargar código</button>
+  </div>
+
+  <div class="exhaustive-stats" aria-live="polite">
+    <span data-exhaustive-range>Mostrando 1-24</span>
+    <span data-exhaustive-pages>Página 1</span>
+    <span data-exhaustive-mode-helper>Con repetición libre</span>
+  </div>
+
+  <div class="exhaustive-library" data-exhaustive-library></div>
+</section>
+
+      <section class="panel library-panel" aria-labelledby="library-title">
+        <div class="panel__header">
+          <div>
+            <p class="panel__eyebrow">Biblioteca</p>
+            <h2 class="panel__title" id="library-title">Patrones por nivel</h2>
+          </div>
+          <span class="panel__badge" data-library-stats>Mostrando ejercicios</span>
+        </div>
+
+        <div class="library-tools" aria-label="Filtros de biblioteca">
+          <label class="library-field">
+            <span>Buscar</span>
+            <input type="search" data-library-search placeholder="Nombre, objetivo, código 135..." />
+          </label>
+
+          <label class="library-field">
+            <span>Nivel</span>
+            <select data-library-level-filter></select>
+          </label>
+
+          <label class="library-field">
+            <span>Categoría</span>
+            <select data-library-category-filter></select>
+          </label>
+        </div>
+
+        <div class="pattern-library" data-pattern-library></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+
+  <!-- ============ DATA: PATRONES ============ -->
+  <script type="module" src="./js/data/patrones.js"></script>
+
+  <!-- ============ AUDIO ENGINE ============ -->
+  <script type="module" src="./js/audio/AudioEngine.js"></script>
+
+  <!-- ============ UI CONTROLLER ============ -->
+  <script type="module" src="./js/controllers/UIController.js"></script>
+
+  <!-- ============ APP INIT ============ -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

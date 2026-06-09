@@ -1,0 +1,17 @@
+{
+  "name": "VozPatrones Musicala",
+  "short_name": "VozPatrones",
+  "description": "Entrenamiento de patrones melódicos con grados de la escala musical.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff8ff",
+  "theme_color": "#fff8ff",
+  "icons": [
+    {
+      "src": "./assets/logo-musicala.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
